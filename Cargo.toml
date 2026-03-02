@@ -4,3 +4,14 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+codec = { package = "parity-scale-codec", version = "3.7.5", default-features = false, features = ["derive"] }
+scale-info = { version = "2.11.6", default-features = false, features = ["derive"] }
+frame = { version = "0.14.0", package = "polkadot-sdk-frame", default-features = false, features = ["experimental", "runtime"] }
+
+[dev-dependencies]
+pallet-balances = { version = "46.0.0" }
+
+[features]
+default = [ "std" ]
+std = [ "codec/std", "frame/std", "scale-info/std" ]
+try-runtime = []
